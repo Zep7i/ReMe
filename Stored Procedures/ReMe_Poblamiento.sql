@@ -1,0 +1,15 @@
+use reme;
+INSERT INTO usuarios (Nombre, Mail, Clave, IdRol) VALUES ('UsuarioPrueba', 'usuarioprueba@gmail.com', 'usuario99', 1);
+INSERT INTO usuarios (Nombre, Mail, Clave, IdRol) VALUES ('AdminPrueba', 'adminprueba@gmail.com', 'admin99', 2);
+INSERT INTO rol (NombreRol, Descripcion) VALUES ('Usuario', 'Usuario del sistema');
+INSERT INTO rol (NombreRol, Descripcion) VALUES ('Administrador', 'Administrador del sistema');
+INSERT INTO relusuariorol (IdUsuario, IdRol) VALUES (1, 1);
+INSERT INTO relusuariorol (IdUsuario, IdRol) VALUES (2, 2);
+INSERT INTO categoriasadc (NombreCategoriaAdc, Descripcion) VALUES ('Tarea', 'Tarea común');
+INSERT INTO categoriasadc (NombreCategoriaAdc, Descripcion) VALUES ('TP', 'Trabajo Práctico');
+INSERT INTO categorias (NombreCategoria, Descripcion) VALUES ('Global', 'Tarea sin clasificar');
+INSERT INTO categorias (NombreCategoria, Descripcion) VALUES ('Importante', 'Tarea prioritaria');
+INSERT INTO categorias (NombreCategoria, Descripcion) VALUES ('Olvidada', 'Tarea olvidada');
+INSERT INTO estado (Tipo, Descripcion) VALUES ('En proceso', 'Tarea sin terminar');
+INSERT INTO estado (Tipo, Descripcion) VALUES ('Aprobada', 'Tarea finalizada y aprobada');
+INSERT INTO estado (Tipo, Descripcion) VALUES ('Desaprobada', 'Tarea finalizada y desaprobada');

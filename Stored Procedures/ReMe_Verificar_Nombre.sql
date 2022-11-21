@@ -1,0 +1,22 @@
+USE reme;
+DELIMITER //
+CREATE PROCEDURE Verificar_Nombre(n1 VARCHAR(15))
+BEGIN
+	 DECLARE c INT;
+	 DECLARE EXIT HANDLER FOR SQLEXCEPTION
+     BEGIN
+     ROLLBACK;
+     END;
+     DECLARE EXIT HANDLER FOR SQLWARNING
+     BEGIN
+     ROLLBACK;
+     END;
+     START TRANSACTION;
+		SELECT COUNT(Nombre) INTO c FROM usuarios WHERE Nombre = n1;
+        IF c >= 1 THEN
+			SELECT 'existente' AS Mensaje;
+		ELSE
+			SELECT 'correcto' AS Mensaje;
+        END IF;
+     COMMIT;
+END //

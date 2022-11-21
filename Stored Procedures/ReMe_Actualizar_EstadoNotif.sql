@@ -1,0 +1,16 @@
+USE reme;
+DELIMITER //
+CREATE PROCEDURE `Actualizar_EstadoNotif`(n1 INT)
+BEGIN
+	 DECLARE EXIT HANDLER FOR SQLEXCEPTION
+     BEGIN
+     ROLLBACK;
+     END;
+     DECLARE EXIT HANDLER FOR SQLWARNING
+     BEGIN
+     ROLLBACK;
+     END;
+     START TRANSACTION;
+		UPDATE reltareanotif SET EstadoNotif = 1 WHERE IdTarea = n1;
+     COMMIT;
+END //
